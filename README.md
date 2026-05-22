@@ -26,6 +26,70 @@
 
 ---
 
+## 安装使用
+
+这是一个 [Claude Code](https://docs.anthropic.com/claude-code) Skill 文件。
+
+### 全局安装（推荐）
+
+```bash
+mkdir -p ~/.claude/skills
+cp SKILL.md ~/.claude/skills/course-notes.md
+```
+
+安装后重启 Claude Code，输入 `/course-notes` 即可使用。
+
+### 项目级安装
+
+```bash
+mkdir -p <your-project>/.claude/skills
+cp SKILL.md <your-project>/.claude/skills/course-notes.md
+```
+
+项目级安装后，进入该项目目录时 skill 自动可用。
+
+### 不通过 Claude Code 使用
+
+也可以直接参考 SKILL.md 的流程，手动或用其他 AI 工具执行笔记整理。
+
+---
+
+## 使用示例
+
+### 示例 1：整理录音转写
+
+```
+/course-notes
+
+这是今天的机器学习课录音转写内容：
+
+[粘贴录音转写文本]
+```
+
+### 示例 2：合并笔记和录音
+
+```
+/course-notes
+
+我有两份材料：
+1. 课堂笔记：[粘贴笔记内容]
+2. 录音转写：[粘贴转写内容]
+
+请帮我整理成复习笔记。
+```
+
+### 示例 3：指定输出文件
+
+```
+/course-notes
+
+把下面的转写内容整理后写入 ml-lecture-05.md：
+
+[粘贴转写内容]
+```
+
+---
+
 ## 核心方法
 
 ### 内容价值判断
@@ -53,25 +117,6 @@ Step 1: 清洗（删噪声、修错误、术语标准化、补逻辑）
 Step 2: 重构（定主线、分模块、选形式、提经验）
 Step 3: 检查（自检清单，发现问题先修正再输出）
 ```
-
----
-
-## 安装使用
-
-这是 [Hermes Agent](https://github.com/NousResearch/hermes-agent) 的 Skill 文件。
-
-```bash
-# 全局安装
-cp SKILL.md ~/.hermes/skills/productivity/course-notes/SKILL.md
-
-# 或项目级安装
-mkdir -p <your-project>/.hermes/skills/course-notes/
-cp SKILL.md <your-project>/.hermes/skills/course-notes/SKILL.md
-```
-
-触发条件：对话中提到"课程笔记"、"课堂整理"、"录音整理"、"听课笔记"、"学习笔记"时自动触发。
-
-也可以不通过 Hermes，直接按 SKILL.md 的流程手动执行。
 
 ---
 
